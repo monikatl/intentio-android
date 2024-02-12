@@ -1,0 +1,25 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.Intentio" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">#326647</item>
+        <item name="colorPrimaryVariant">#326647</item>
+        <item name="colorOnPrimary">#e0c2c0</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">#57394a</item>
+        <item name="colorSecondaryVariant">#57394a</item>
+        <item name="colorOnSecondary">#dbb0a0</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">?attr/colorPrimary</item>
+        <!-- Customize your theme here. -->
+    </style>
+
+    <style name="Theme.Intentio.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.Intentio.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.Intentio.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+</resources>
