@@ -7,65 +7,94 @@
     android:orientation="vertical"
     tools:context=".ui.main.home.HomeFragment">
 
-    <ImageView
+    <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"/>
+        android:orientation="vertical"
+        android:layout_weight="2">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:text="Nadchodzące Intencje"
+            android:textStyle="bold"
+            android:textSize="21sp"
+            android:textAlignment="center"
+            android:textAllCaps="true"
+            android:layout_weight="1"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/intents_recyclerview"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="8"
+            tools:listitem="@layout/intent_list_item"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:orientation="vertical">
+
+        </androidx.recyclerview.widget.RecyclerView>
 
 
-    <Button
-        android:id="@+id/calendar"
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
-        android:layout_marginHorizontal="16dp"
-        android:layout_marginBottom="16dp"
-        android:background="@drawable/round_button"
-        android:text="KALENDARZ"/>
+        android:orientation="vertical"
+        android:layout_weight="3">
 
-   <Button
-       android:id="@+id/intents"
-       android:layout_width="match_parent"
-       android:layout_height="0dp"
-       android:layout_weight="1"
-       android:layout_marginHorizontal="16dp"
-       android:layout_marginBottom="16dp"
-       android:background="@drawable/round_button"
-       android:text="INTENCJE"/>
 
-    <Button
-        android:id="@+id/sacraments"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:layout_marginHorizontal="16dp"
-        android:layout_marginBottom="16dp"
-        android:background="@drawable/round_button"
-        android:text="SAKRAMENTY"/>
+        <Button
+            android:id="@+id/calendar"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_marginHorizontal="8dp"
+            android:layout_marginBottom="4dp"
+            android:background="@drawable/round_button"
+            android:text="KALENDARZ"/>
 
-    <Button
-        android:id="@+id/pogrzeb"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:layout_marginHorizontal="16dp"
-        android:layout_marginBottom="16dp"
-        android:background="@drawable/round_button"
-        android:text="Pogrzeb"/>
+       <Button
+           android:id="@+id/intents"
+           android:layout_width="match_parent"
+           android:layout_height="0dp"
+           android:layout_weight="1"
+           android:layout_marginHorizontal="8dp"
+           android:layout_marginBottom="4dp"
+           android:background="@drawable/round_button"
+           android:text="INTENCJE"/>
 
-    <Button
-        android:id="@+id/others"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:layout_marginHorizontal="16dp"
-        android:layout_marginBottom="16dp"
-        android:background="@drawable/round_button"
-        android:text="INNE"/>
+        <Button
+            android:id="@+id/sacraments"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_marginHorizontal="8dp"
+            android:layout_marginBottom="4dp"
+            android:background="@drawable/round_button"
+            android:text="SAKRAMENTY"/>
 
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"/>
+        <Button
+            android:id="@+id/pogrzeb"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_marginHorizontal="8dp"
+            android:layout_marginBottom="4dp"
+            android:background="@drawable/round_button"
+            android:text="Pogrzeb"/>
+
+        <Button
+            android:id="@+id/others"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_marginHorizontal="8dp"
+            android:layout_marginBottom="4dp"
+            android:background="@drawable/round_button"
+            android:text="INNE"/>
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
 
 </androidx.appcompat.widget.LinearLayoutCompat>

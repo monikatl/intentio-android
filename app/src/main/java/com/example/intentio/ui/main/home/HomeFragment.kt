@@ -9,27 +9,39 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.intentio.R
+import com.example.intentio.data.Intent
+import com.example.intentio.data.IntentType
+import com.example.intentio.data.Priest
+import com.example.intentio.data.User
 import com.example.intentio.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {
 
-    private var _binding: FragmentHomeBinding? = null
+    private lateinit var binding: FragmentHomeBinding
+    private lateinit var viewModel: HomeViewModel
 
-    // This property is only valid between onCreateView and
-    // onDestroyView.
-    private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val homeViewModel =
-            ViewModelProvider(this).get(HomeViewModel::class.java)
+        val viewModel =
+            ViewModelProvider(this)[HomeViewModel::class.java]
 
-        _binding = FragmentHomeBinding.inflate(inflater, container, false)
-        val root: View = binding.root
+        binding = FragmentHomeBinding.inflate(inflater, container, false)
+
+        val intents: List<Intent> = listOf(
+            Intent(IntentType.SINGLE, "O Boże błogosławieństwo dla Adama Nowaka w trzydziestą rocznicę urodzin.", "24:05:2019 7:00", User("Ktoś"), Priest()),
+            Intent(IntentType.SINGLE, "O Boże błogosławieństwo dla Adama Nowaka w trzydziestą rocznicę urodzin.", "24:05:2019 7:00", User("Ktoś"), Priest()),
+            Intent(IntentType.SINGLE, "O Boże błogosławieństwo dla Adama Nowaka w trzydziestą rocznicę urodzin.", "24:05:2019 7:00", User("Ktoś"), Priest())
+        )
+
+        val adapter = IntentAdapter(intents)
+        binding.intentsRecyclerview.adapter = adapter
+
 
         val navController = findNavController()
 
@@ -39,15 +51,15 @@ class HomeFragment : Fragment() {
         binding.others.setOnClickListener { navController.navigate(R.id.action_nav_home_to_othersFragment) }
 
 
+
+
 //        val textView: TextView = binding.textHome
 //        homeViewModel.text.observe(viewLifecycleOwner) {
 //            textView.text = it
 //        }
-        return root
+        return binding.root
     }
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
-    }
+
+
 }
