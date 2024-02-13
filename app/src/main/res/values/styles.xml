@@ -7,6 +7,10 @@
         <item name="cardElevation">0dp</item>
     </style>
 
+    <style name="SpinnerWithStroke">
+        <item name="android:background">@drawable/spinner_background_with_stroke</item>
+    </style>
+
 
 
 </resources>

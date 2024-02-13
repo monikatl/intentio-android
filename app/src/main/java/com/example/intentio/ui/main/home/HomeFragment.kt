@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
@@ -16,6 +17,7 @@ import com.example.intentio.data.IntentType
 import com.example.intentio.data.Priest
 import com.example.intentio.data.User
 import com.example.intentio.databinding.FragmentHomeBinding
+import com.example.intentio.ui.main.Repository
 
 class HomeFragment : Fragment() {
 
@@ -33,14 +35,14 @@ class HomeFragment : Fragment() {
 
         binding = FragmentHomeBinding.inflate(inflater, container, false)
 
-        val intents: List<Intent> = listOf(
-            Intent(IntentType.SINGLE, "O Boże błogosławieństwo dla Adama Nowaka w trzydziestą rocznicę urodzin.", "24:05:2019 7:00", User("Ktoś"), Priest()),
-            Intent(IntentType.SINGLE, "O Boże błogosławieństwo dla Adama Nowaka w trzydziestą rocznicę urodzin.", "24:05:2019 7:00", User("Ktoś"), Priest()),
-            Intent(IntentType.SINGLE, "O Boże błogosławieństwo dla Adama Nowaka w trzydziestą rocznicę urodzin.", "24:05:2019 7:00", User("Ktoś"), Priest())
-        )
+        val intents: List<Intent> = emptyList()
 
-        val adapter = IntentAdapter(intents)
+        val adapter = IntentAdapter()
         binding.intentsRecyclerview.adapter = adapter
+
+         viewModel.intents.observe(this, Observer {
+             adapter.setList(viewModel.intents.value ?: emptyList())
+        })
 
 
         val navController = findNavController()

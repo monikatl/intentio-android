@@ -3,11 +3,13 @@ package com.example.intentio.ui.main.home
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.example.intentio.data.Intent
+import com.example.intentio.ui.main.Repository
 
 class HomeViewModel : ViewModel() {
 
-    private val _text = MutableLiveData<String>().apply {
-        value = "This is home Fragment"
+    private val _intents = MutableLiveData<List<Intent>>().apply {
+        value = Repository.intents
     }
-    val text: LiveData<String> = _text
+    val intents: LiveData<List<Intent>> = _intents
 }
