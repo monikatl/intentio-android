@@ -35,6 +35,7 @@
         android:name="com.example.intentio.ui.main.slideshow.SlideshowFragment"
         android:label="@string/menu_slideshow"
         tools:layout="@layout/fragment_slideshow" />
+
     <fragment
         android:id="@+id/intentFragment"
         android:name="com.example.intentio.ui.main.intent.IntentFragment"
@@ -43,6 +44,7 @@
             android:id="@+id/action_intentFragment_to_orderIntentionFragment"
             app:destination="@id/orderIntentionFragment" />
     </fragment>
+
     <fragment
         android:id="@+id/calendarFragment"
         android:name="com.example.intentio.ui.main.calendar.CalendarFragment"
@@ -67,4 +69,13 @@
             android:id="@+id/action_orderIntentionFragment_to_nav_home"
             app:destination="@id/nav_home" />
     </fragment>
+
+
+    <fragment
+        android:id="@+id/nav_config"
+        android:name="com.example.intentio.ui.main.config.ConfigFragment"
+        android:label="fragment_config"
+        tools:layout="@layout/fragment_config" />
+
+
 </navigation>

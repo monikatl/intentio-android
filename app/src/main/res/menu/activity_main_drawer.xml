@@ -16,5 +16,9 @@
             android:id="@+id/nav_slideshow"
             android:icon="@drawable/ic_menu_slideshow"
             android:title="@string/menu_slideshow" />
+        <item
+            android:id="@+id/nav_config"
+            android:icon="@drawable/config_performance_svgrepo_com"
+            android:title="Edycja Parafii" />
     </group>
 </menu>
